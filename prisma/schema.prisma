@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Note {
+  id          String        @id @default(uuid())
+  title       String
+  content     String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  folder      Folder        @relation("FolderToNote", fields: [folderId], references: [id])
+  folderId    String
+  RefinedNote RefinedNote[]
+}
+
+model Folder {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  notes     Note[]   @relation("FolderToNote")
+}
+
+model RefinedNote {
+  id           String   @id @default(uuid())
+  originalNote String // The original text of the note
+  refinedNote  String? // The refined text from ChatGPT
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  noteId       String // Foreign key for the related note
+  note         Note     @relation(fields: [noteId], references: [id])
+}

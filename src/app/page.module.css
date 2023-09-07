@@ -1,10 +1,108 @@
 .main {
+  padding: 2rem;  /* Adjust padding as you see fit */
+  min-height: 100vh;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  padding: 1rem;
+  background-color: rgba(var(--card-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--card-border-rgb), 0.15);
+}
+
+.navList {
+  display: flex;
+  gap: 1rem;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.noteCardContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.noteCard {
+  width: 220px;
+  height: 300px;
+  background: 
+    linear-gradient(to bottom, white 0%, white 98%, #ccc 98%, #ccc 100%),
+    linear-gradient(to bottom, transparent 0%, transparent 3.8%, #eee 3.8%, #eee 4%);
+  background-size: 100% 16px, 100% 4px; /* height of the major and minor lines */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 16px;
+  margin: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.noteCard h2 {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.noteCard p {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.noteTitle {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.noteContent {
+  font-size: 12px;  /* Making text a lot smaller */
+  white-space: pre-wrap; /* Preserves white space and new lines */
+}
+
+
+.list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;  /* Align items at the start of the cross axis, i.e., top */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.listItem {
+  margin: 1rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .description {

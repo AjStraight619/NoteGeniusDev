@@ -1,0 +1,63 @@
+.noteCardContainer {
+    display: flex;
+    flex-direction: row; /* Ensures the notes are aligned horizontally */
+    flex-wrap: nowrap; /* Disables wrapping onto next line */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 1rem;
+  }
+  
+  .noteCard {
+    width: 220px;
+    height: 300px;
+    background-image: 
+      repeating-linear-gradient(
+        to bottom,
+        #fff 0px,
+        #fff 19px,
+        #e4e4e4 19px,
+        #e4e4e4 20px
+      ),
+      linear-gradient(
+        to bottom,
+        #fff 0px,
+        #fff 100%
+      ); /* Fallback to a white background after the repeating lines stop */
+    background-size: 100% 260px, 100% 100%; /* The first size limits the height of the repeating lines, the second sets the size of the fallback */
+    background-position: 0 100%, 0 0;  /* Aligns the first background to the bottom */
+    background-repeat: no-repeat;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 15px 16px;
+    margin: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .noteCard p {
+    font-size: 0.8em;
+    line-height: 20px;  /* Make sure line height matches with background line spacing */
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .noteCard h2 {
+    font-size: 1.2em;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  
+  
+  .noteTitle {
+    font-size: 18px;  /* Slightly bigger than note content */
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .noteContent {
+    font-size: 12px;  /* Smaller font size for note content */
+    white-space: pre-wrap; /* Preserves white space and new lines */
+  }
