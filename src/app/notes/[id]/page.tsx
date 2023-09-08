@@ -31,7 +31,7 @@ export default async function ViewNotes({ params }: { params: NoteParams }) {
       <h1>Notes</h1>
       <div className={cardstyles.noteCardContainer}>
         {notes.map((note) => (
-          <Link href={`/create-note/${note.id}`} key={note.id}>
+          <Link href={`/notes/view-note/${note.id}`} key={note.id}>
             <div className={cardstyles.noteCard}>
               <h2 className={cardstyles.noteTitle}>{note.title}</h2>
               <p className={cardstyles.noteContent}>{note.content}</p>

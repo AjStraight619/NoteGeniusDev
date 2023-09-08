@@ -1,0 +1,130 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 16px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .inputField,
+  .textArea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+    min-height: 50px; /* for input */
+  }
+  
+  .textArea {
+    min-height: 400px; /* for textarea */
+  }
+  
+  .inputField:focus,
+  .textArea:focus {
+    border-color: #007bff;
+  }
+  
+  .submitButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .linkContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+
+  
+  .folderSelect {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .folderSelect label {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
+  
+  .folderSelect select {
+    appearance: none; /* Remove default styles */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+    padding: 10px 32px 10px 16px; /* Adjust padding as needed */
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  /* Add a down arrow icon */
+  .folderSelect select::after {
+    content: "\25BC"; /* Unicode character for down arrow ▼ */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensure the icon doesn't interfere with select clicks */
+  }
+  
+  .folderSelect select:focus {
+    border-color: #007bff;
+  }
+
+  .dropdownContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .dropdownContainer label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Adjust spacing as needed */
+    cursor: pointer; /* Add pointer cursor for better UX */
+  }
+  
+  .selectField {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none; /* Remove default styling */
+  }
+  
+  .selectField:focus {
+    border-color: #007bff;
+  }
+
+  .actionContainer {
+    display: flex;
+    justify-content: space-between; /* This ensures they're spaced apart */
+    align-items: center; /* This makes sure they're aligned vertically */
+    width: 100%; /* Take up the full width of the parent container */
+}
+  

@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolder } from "@fortawesome/free-solid-svg-icons";
+import "font-awesome/css/font-awesome.min.css";
 
 export const getNotes = async () => {
   const notes = await prisma.note.findMany({

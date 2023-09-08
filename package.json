@@ -13,19 +13,23 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@prisma/client": "^5.2.0",
-    "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "buffer": "^6.0.3",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "font-awesome": "^4.7.0",
     "icons": "^1.0.0",
     "next": "13.4.19",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
+    "react-select": "^5.7.4",
+    "swr": "^2.2.2",
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/node": "^20.5.9",
     "prisma": "^5.2.0"
   }
 }
