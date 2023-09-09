@@ -1,38 +1,53 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
-import useSWR from "swr";
+import { useState, useEffect } from "react";
+import { useGetProduct } from "../../../../../hooks/useGetProducts";
+import styles from "./viewnote.module.css";
 
-async function fetcher(url: string) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error("Failed to load data");
-  }
-  return res.json();
-}
+type Note = {
+  id: string;
+  title: string;
+  content: string;
+};
 
-export default function ViewNotePage() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+export default function ViewNotePage({ params }: { params: Note }) {
+  // For console logging
+  console.log(params.id);
 
+  // Fetching the note using custom hook
+  const { data: note, isLoading, error } = useGetProduct(params.id);
+
+  // Local state for title and content
+  const [localTitle, setLocalTitle] = useState<string | null>(null);
+  const [localContent, setLocalContent] = useState<string | null>(null);
+
+  // Update local state when the fetched note changes
   useEffect(() => {
-    console.log(`Current pathname: ${pathname}`);
-    if (id) {
-      console.log(`Note ID is: ${id}`);
+    if (note) {
+      setLocalTitle(note.title);
+      setLocalContent(note.content);
     }
-  }, [pathname, id]);
+  }, [note]);
 
-  const { data, error } = useSWR(id ? `/api/${id}` : null, fetcher);
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-
+  // Return JSX
   return (
     <div>
-      <h1>{data.title}</h1>
-      <p>{data.content}</p>
+      <div className={`${styles.paperBackground} ${styles.movable}`}>
+        <input
+          type="text"
+          className={styles.title}
+          value={localTitle || ""}
+          onChange={(e) => setLocalTitle(e.target.value)}
+        />
+        <textarea
+          className={styles.content}
+          value={localContent || ""}
+          onChange={(e) => setLocalContent(e.target.value)}
+        ></textarea>
+      </div>
+      <div className={styles.saveButtonContainer}>
+        <button className={styles.saveButton}>Save</button>
+      </div>
     </div>
   );
 }

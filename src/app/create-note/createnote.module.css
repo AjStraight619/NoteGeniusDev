@@ -123,8 +123,13 @@
 
   .actionContainer {
     display: flex;
-    justify-content: space-between; /* This ensures they're spaced apart */
-    align-items: center; /* This makes sure they're aligned vertically */
-    width: 100%; /* Take up the full width of the parent container */
-}
+    justify-content: flex-end; /* Aligns them to the right */
+    align-items: center;
+    gap: 16px; /* Add some spacing between them */
+    width: 100%;
+  }
+
+  .shortDropdown {
+    width: 100px; /* Or whatever width you want */
+  }
   

@@ -91,7 +91,7 @@ const CreateNotePage: React.FC = () => {
         <button
           type="button"
           onClick={handleSave}
-          className={styles.submitButton}
+          className={`${styles.selectField} ${styles.shortDropdown}`}
         >
           Save
         </button>
