@@ -1,4 +1,4 @@
-import { prisma } from "@/db"; // replace with your actual import path
+import { prisma } from "@/db";
 import { NextResponse } from "next/server";
 
 export async function GET() {

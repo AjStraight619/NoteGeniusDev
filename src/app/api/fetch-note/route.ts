@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     // Fetch the last folder created
     const lastFolder = await prisma.folder.findFirst({
       orderBy: {
-        createdAt: "desc", // Assuming 'createdAt' is a timestamp field on your folder model
+        createdAt: "desc", // Sort by createdAt in descending order
       },
       select: {
         id: true,

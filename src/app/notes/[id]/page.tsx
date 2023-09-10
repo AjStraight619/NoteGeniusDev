@@ -1,7 +1,3 @@
-// help me fetch the notes from a specific folder using nextjs13, not getServerSideProps, I am passing the folder id in the url
-// need to use next/navigation instead of useRouter. Can't use useRouter because this is a server component and not a client component
-// lets rewrite the function to use nextjs13
-// create a type to match the params passed
 import Link from "next/link";
 import { prisma } from "@/db";
 import styles from "../../page.module.css";

@@ -8,10 +8,10 @@
   }
   
   .content {
-    flex: 1; /* occupy remaining space */
+    flex: 1; 
     padding: 16px;
     border: none;
-    background: transparent; /* make it blend into the background */
+    background: transparent; 
     font-size: 20px;
     outline: none;
     width: 100%;

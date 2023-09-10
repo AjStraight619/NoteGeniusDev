@@ -3,13 +3,11 @@
 import styles from "./EnhancedNoteView.module.css";
 
 type EnhancedNoteViewProps = {
-  originalContent: string | null;
   refinedContent: string | null;
   title: string | null;
 };
 
 const EnhancedNoteView: React.FC<EnhancedNoteViewProps> = ({
-  originalContent,
   refinedContent,
   title,
 }) => {

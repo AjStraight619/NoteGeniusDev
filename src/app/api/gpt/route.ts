@@ -5,6 +5,8 @@ import { config } from "dotenv";
 
 config();
 
+// TODO: Add add the refined note to the data base
+
 console.log(process.env.OPENAI_API_KEY);
 
 // Initialize the OpenAI instance

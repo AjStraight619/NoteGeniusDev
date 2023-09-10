@@ -17,10 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>{/* any meta tags or link elements */}</head>
+      <head></head>
       <body className={inter.className}>
         <div className={styles.navbar}>
-          <div className={styles.logo}>{/* Your logo here */}</div>
+          <div className={styles.logo}></div>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
               <Link href="/" className={styles.navLink}>

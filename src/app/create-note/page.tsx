@@ -19,7 +19,7 @@ const CreateNotePage: React.FC = () => {
   const [content, setContent] = useState<string>("");
   const [selectedFolder, setSelectedFolder] = useState<Option | null>(null);
   const [folders, setFolders] = useState<Folder[]>([]);
-  const [isEnchanced, setIsEnchanced] = useState<boolean>(false);
+  // const [isEnhanced, setIsEnchanced] = useState<boolean>(false);
 
   useEffect(() => {
     fetch("/api/fetch-folders", {

@@ -41,13 +41,13 @@ export default function ViewNotePage({ params }: { params: Note }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: localContent }), // sending it as `message`
+        body: JSON.stringify({ message: localContent }),
       });
 
       if (response.ok) {
         const data = await response.json();
         console.log("Setting isEnhanced to true");
-        setIsEnhanced(true); // this should cause a re-render
+        setIsEnhanced(true);
         console.log(data);
       } else {
         console.error("Failed to send note");
@@ -96,7 +96,6 @@ export default function ViewNotePage({ params }: { params: Note }) {
         {isEnhanced && (
           <div className={enhancedNoteClasses.join(" ")}>
             <EnhancedNoteView
-              originalContent={localContent}
               refinedContent={refinedContent}
               title={localTitle}
             />
