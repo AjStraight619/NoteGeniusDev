@@ -1,0 +1,41 @@
+.slideLeft {
+    animation: slideLeft 0.3s ease-out;
+  }
+  
+  .slideRight {
+    animation: slideRight 0.3s ease-out;
+  }
+  
+  @keyframes slideLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes slideRight {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .initialOffScreen {
+    transform: translateX(100%);
+  }
+
+  .splitContainer {
+    display: flex;
+    overflow: hidden;
+  }
+  .splitContainer > div {
+    flex: 1;
+  }
