@@ -2,6 +2,7 @@ import { prisma } from "@/db";
 import { NextResponse, NextRequest } from "next/server";
 
 // create a post request for a user creating an account with prisma
+// TODO: Test and fix this route
 
 export async function POST(request: NextRequest) {
   const { email, password, username } = JSON.parse(

@@ -7,6 +7,8 @@ type EnhancedNoteViewProps = {
   title: string | null;
 };
 
+// TODO: display AI's response here
+
 const EnhancedNoteView: React.FC<EnhancedNoteViewProps> = ({
   refinedContent,
   title,

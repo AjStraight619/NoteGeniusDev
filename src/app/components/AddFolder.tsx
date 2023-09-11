@@ -18,6 +18,8 @@ const AddFolder = ({ folderNames }: { folderNames: string[] }) => {
     console.log("Folder exists:", folderExists);
   }, [folderName, folderNames]);
 
+  // TODO: Test functionality of this function
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     console.log("folderName", folderName);
@@ -26,7 +28,6 @@ const AddFolder = ({ folderNames }: { folderNames: string[] }) => {
       return;
     }
 
-    // Handle folder creation logic here
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

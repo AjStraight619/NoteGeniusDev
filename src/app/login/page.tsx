@@ -13,6 +13,10 @@ export default function LoginForm() {
   const [message, setMessage] = useState<string | null>(null);
   const [isLoginMode, setIsLoginMode] = useState(true);
 
+  // TODO: Add a password reset feature, and a "forgot password" link, and a "resend verification email" link, and a "change email" link, and a "change username" link
+  // TODO: Add a "delete account" button,
+  // TODO: Create API endpoints for all of the above and test handleLogin function.
+
   const handleLogin = async (e: any) => {
     e.preventDefault();
 

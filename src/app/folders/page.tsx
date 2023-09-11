@@ -2,7 +2,8 @@ import { prisma } from "@/db";
 import styles from "./folders.module.css";
 import Link from "next/link";
 import AddFolder from "@/app/components/AddFolder";
-import type { Folder } from "@prisma/client";
+
+// TODO: Add delete/edit buttons to each folder
 
 export const getFolders = async () => {
   const folders = await prisma.folder.findMany({
@@ -33,15 +34,3 @@ export default async function FolderPage() {
     </main>
   );
 }
-
-//   folders.forEach((folder) => {
-//     if (folder && folder.notes) {
-//       console.log(`Notes in Folder: ${folder.id}`);
-//       folder.notes.forEach((note) => {
-//         console.log(`Note Title: ${note.title}`);
-//         console.log(`Note Content: ${note.content}`);
-//       });
-//     }
-//   });
-
-//   folders.forEach((folder) => console.log(`Folder: ${folder.id}`));
