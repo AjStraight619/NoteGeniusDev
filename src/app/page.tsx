@@ -23,6 +23,8 @@ export const getFolders = async () => {
   return folders;
 };
 
+export const getUser = async () => {};
+
 export default async function Home() {
   const folders = await getFolders();
   const notes = await getNotes();

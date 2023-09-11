@@ -1,0 +1,12 @@
+.floatingChatIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000; /* or some high number to make sure it stays on top */
+  }

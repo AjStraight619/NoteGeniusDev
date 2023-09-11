@@ -1,0 +1,28 @@
+.add-folder {
+    position: fixed; /* Fixed position */
+    top: 1rem; /* Position it at the top */
+    right: 1rem; /* Position it at the right */
+    z-index: 1;  /* Ensure it sits over other content */
+    top: 4rem;
+  }
+  
+  .add-icon {
+    font-size: 2rem; /* Adjust the size of the plus icon */
+    color: #007bff; /* Blue color */
+    cursor: pointer; /* Hand cursor on hover */
+  }
+  
+  .add-icon:hover {
+    color: #0056b3; /* Darken blue color on hover */
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #fff;
+    z-index: 1;
+  }

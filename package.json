@@ -16,12 +16,14 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "axios": "^1.5.0",
+    "bcryptjs": "^2.4.3",
     "buffer": "^6.0.3",
     "dotenv": "^16.3.1",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "font-awesome": "^4.7.0",
     "icons": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
     "next": "13.4.19",
     "openai": "^4.6.0",
     "react": "^18.2.0",
@@ -32,6 +34,8 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.3",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.5.9",
     "prisma": "^5.2.0"
   }

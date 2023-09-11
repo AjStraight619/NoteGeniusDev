@@ -26,8 +26,14 @@ export default function RootLayout({
               <Link href="/" className={styles.navLink}>
                 Home
               </Link>
+              <Link href="/folders" className={styles.navLink}>
+                My notes
+              </Link>
               <Link href="/create-note" className={styles.navLink}>
                 Create Note
+              </Link>
+              <Link href="/login" className={styles.navLink}>
+                Login
               </Link>
             </li>
           </ul>
