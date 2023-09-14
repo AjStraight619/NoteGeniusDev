@@ -1,8 +1,9 @@
 import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { NextResponse } from 'next/server';
 import { type User } from '@prisma/client';
+import Link from 'next/link';
+import NotesPage from '@/app/notes/page';
 
 const getFolders = async () => {
   const session = await getServerSession(authOptions);
@@ -33,8 +34,8 @@ const FolderPage = async () => {
         {folders ? (
           folders.map((folder) => (
             <li key={folder.id}>
-              Name: {folder.name}, Created At: {folder.createdAt.toString()},
-              Updated At: {folder.updatedAt.toString()}
+              <NotesPage params={folder} />
+              <Link href="/notes"> {folder.name}</Link>
             </li>
           ))
         ) : (
