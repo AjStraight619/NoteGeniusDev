@@ -3,7 +3,11 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { type User } from '@prisma/client';
 import Link from 'next/link';
-import NotesPage from '@/app/notes/page';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
+import { FaFolder } from 'react-icons/fa';
+
+// import NotesPage from '@/app/notes/page';
 
 const getFolders = async () => {
   const session = await getServerSession(authOptions);
@@ -27,21 +31,25 @@ const FolderPage = async () => {
   const folders = await getFolders();
 
   return (
-    <div>
+    <div className="m-4">
       <div>Folder Page</div>
-      <div>These are the folders: </div>
-      <ul>
+      <div>These are the folders:</div>
+      <div className="flex flex-wrap gap-4 mt-4">
         {folders ? (
           folders.map((folder) => (
-            <li key={folder.id}>
-              <NotesPage params={folder} />
-              <Link href="/notes"> {folder.name}</Link>
-            </li>
+            <div key={folder.id} className="p-2">
+              <Link href={`/folders/notes/${folder.id}`}>
+                <div className="text-center">
+                  <FaFolder size={32} className="m-auto" />
+                </div>
+                <div className="text-center mt-2">{folder.name}</div>
+              </Link>
+            </div>
           ))
         ) : (
-          <li>No folders available</li>
+          <div>No folders available</div>
         )}
-      </ul>
+      </div>
     </div>
   );
 };
